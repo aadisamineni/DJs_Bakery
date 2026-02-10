@@ -11,7 +11,6 @@
       --tan: #e6d5c3;
       --brown: #6b4a3a;
       --dark: #3a2a22;
-      --accent: #c49a6c;
       --white: #ffffff;
     }
 
@@ -40,13 +39,14 @@
     h1, h2, h3 {
       color: var(--brown);
       margin-bottom: 1rem;
-      line-height: 1.25;
     }
 
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
 
-    /* NAV */
+    /* =====================
+       NAV
+       ===================== */
     nav {
       position: sticky;
       top: 0;
@@ -85,7 +85,9 @@
 
     nav a:hover { background-color: var(--tan); }
 
-    /* HERO */
+    /* =====================
+       HERO
+       ===================== */
     #home {
       background: linear-gradient(135deg, var(--tan), var(--cream));
       text-align: center;
@@ -108,7 +110,9 @@
 
     .hero-cta:hover { background-color: var(--dark); }
 
-    /* MENU */
+    /* =====================
+       MENU
+       ===================== */
     #menu { background-color: var(--white); }
 
     .menu-grid {
@@ -125,12 +129,6 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.05);
     }
 
-    .menu-section h3 {
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--tan);
-      padding-bottom: 0.5rem;
-    }
-
     .menu-item {
       display: flex;
       justify-content: space-between;
@@ -138,7 +136,9 @@
       font-size: 0.95rem;
     }
 
-    /* FEATURES */
+    /* =====================
+       FEATURES
+       ===================== */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -153,14 +153,37 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.05);
     }
 
-    /* TEAM */
+    /* =====================
+       TEAM (IMAGE FIXED)
+       ===================== */
+    #team { background-color: var(--white); }
+
     .team-photo {
       margin-top: 2rem;
+      background-color: var(--tan);
+      padding: 1rem;
       border-radius: 14px;
-      overflow: hidden;
+      text-align: center;
     }
 
-    /* VISIT */
+    .team-photo img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .team-caption {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* =====================
+       VISIT
+       ===================== */
     .visit-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -198,7 +221,6 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#menu">Menu</a></li>
-      <li><a href="#known-for">Known For</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="#visit">Visit</a></li>
     </ul>
@@ -216,51 +238,18 @@
 <section id="menu">
   <div class="container">
     <h2>Donut Menu</h2>
-
     <div class="menu-grid">
       <div class="menu-section">
-        <h3>Classic Donuts</h3>
+        <h3>Classic</h3>
         <div class="menu-item"><span>Glazed</span><span>$1.50</span></div>
         <div class="menu-item"><span>Chocolate Iced</span><span>$1.75</span></div>
-        <div class="menu-item"><span>Vanilla Iced</span><span>$1.75</span></div>
         <div class="menu-item"><span>Sugar</span><span>$1.50</span></div>
-      </div>
-
-      <div class="menu-section">
-        <h3>Cake Donuts</h3>
-        <div class="menu-item"><span>Old Fashioned</span><span>$1.75</span></div>
-        <div class="menu-item"><span>Chocolate Cake</span><span>$1.75</span></div>
-        <div class="menu-item"><span>Blueberry Cake</span><span>$1.75</span></div>
-      </div>
-
-      <div class="menu-section">
-        <h3>Filled</h3>
-        <div class="menu-item"><span>Jelly</span><span>$2.00</span></div>
-        <div class="menu-item"><span>Cream</span><span>$2.00</span></div>
-        <div class="menu-item"><span>Custard</span><span>$2.00</span></div>
       </div>
 
       <div class="menu-section">
         <h3>Specialty</h3>
         <div class="menu-item"><span>Apple Fritter</span><span>$2.50</span></div>
         <div class="menu-item"><span>Cinnamon Roll</span><span>$2.75</span></div>
-        <div class="menu-item"><span>Bear Claw</span><span>$2.75</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="known-for">
-  <div class="container">
-    <h2>What We’re Known For</h2>
-    <div class="features">
-      <div class="feature-card">
-        <h3>Vietnamese Coffee</h3>
-        <p>Strong, smooth, and brewed traditionally.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Fresh Donuts</h3>
-        <p>Made daily with classic flavors.</p>
       </div>
     </div>
   </div>
@@ -269,9 +258,14 @@
 <section id="team">
   <div class="container">
     <h2>Our Team</h2>
+
     <div class="team-photo">
       <img src="IMG_9939.jpg" alt="DJ’s Bakery team">
     </div>
+
+    <p class="team-caption">
+      Family-owned and proudly serving Ann Arbor every morning.
+    </p>
   </div>
 </section>
 

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ’s Bakery | Ann Arbor</title>
+
+  <!--
+    DJ’s Bakery – Single-file static site
+    All CSS is embedded here for GitHub Pages deployment.
+  -->
+  <style>
+    /* =====================
+       COLOR PALETTE
+       ===================== */
+    :root {
+      --cream: #f7f2eb;
+      --tan: #e6d5c3;
+      --brown: #6b4a3a;
+      --dark: #3a2a22;
+      --accent: #c49a6c;
+      --white: #ffffff;
+    }
+
+    /* =====================
+       GLOBAL STYLES
+       ===================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    section {
+      padding: 4rem 1.25rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      color: var(--brown);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      max-width: 720px;
+      margin-bottom: 1rem;
+    }
+
+    /* =====================
+       NAVIGATION
+       ===================== */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: rgba(247, 242, 235, 0.95);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      color: var(--brown);
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 0.9rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      background-color: var(--tan);
+    }
+
+    /* =====================
+       HERO
+       ===================== */
+    #home {
+      background: linear-gradient(135deg, var(--tan), var(--cream));
+      text-align: center;
+      padding: 6rem 1.25rem;
+    }
+
+    #home h1 {
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background-color: var(--brown);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .hero-cta:hover {
+      background-color: var(--dark);
+    }
+
+    /* =====================
+       OUR STORY
+       ===================== */
+    #story {
+      background-color: var(--white);
+    }
+
+    /* =====================
+       WHAT WE'RE KNOWN FOR
+       ===================== */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background-color: var(--white);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* =====================
+       TEAM
+       ===================== */
+    #team {
+      background-color: var(--white);
+    }
+
+    .team-photo {
+      margin-top: 2rem;
+      border-radius: 14px;
+      overflow: hidden;
+      background-color: var(--tan);
+    }
+
+    .team-caption {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--dark);
+    }
+
+    /* =====================
+       VISIT US
+       ===================== */
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .visit-info p {
+      margin-bottom: 0.5rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 320px;
+      border: none;
+      border-radius: 14px;
+    }
+
+    /* =====================
+       FOOTER
+       ===================== */
+    footer {
+      background-color: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    footer a {
+      color: var(--cream);
+      text-decoration: underline;
+    }
+
+    /* =====================
+       RESPONSIVE
+       ===================== */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .visit-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================
+       NAVIGATION
+       ===================== -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">DJ’s Bakery</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#known-for">What We’re Known For</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =====================
+       HERO
+       ===================== -->
+  <section id="home">
+    <div class="container">
+      <h1>DJ’s Bakery</h1>
+      <p class="hero-tagline">
+        Fresh donuts and Vietnamese coffee, made daily for our Ann Arbor community.
+      </p>
+      <a href="#visit" class="hero-cta">Visit Us Today</a>
+    </div>
+  </section>
+
+  <!-- =====================
+       OUR STORY
+       ===================== -->
+  <section id="story">
+    <div class="container">
+      <h2>Our Story</h2>
+      <p>
+        DJ’s Bakery is a family-run neighborhood bakery that’s been part of Ann Arbor
+        mornings for years. What began as a small family passion has grown into a
+        welcoming place where locals stop by for fresh donuts, strong Vietnamese
+        coffee, and familiar faces behind the counter.
+      </p>
+      <p>
+        Everything we serve is made fresh each day, with care, consistency, and the
+        same warmth we’d offer guests in our own home. For us, it’s not just about
+        baking — it’s about being part of the community.
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================
+       WHAT WE'RE KNOWN FOR
+       ===================== -->
+  <section id="known-for">
+    <div class="container">
+      <h2>What We’re Known For</h2>
+
+      <div class="features">
+        <div class="feature-card">
+          <h3>Vietnamese Coffee</h3>
+          <p>
+            Bold, smooth, and brewed the traditional way — the perfect companion
+            to start your morning or power your afternoon.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Fresh Donuts</h3>
+          <p>
+            Made fresh every day with classic flavors and simple ingredients,
+            just the way a neighborhood donut shop should be.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       OUR TEAM
+       ===================== -->
+  <section id="team">
+    <div class="container">
+      <h2>Our Team</h2>
+
+      <div class="team-photo">
+        <!--
+          Replace the src below with a real group photo of the DJ’s Bakery team.
+          Example: src="images/team.jpg"
+        -->
+        <img src="" alt="IMG_9939.jpg" />
+      </div>
+
+      <p class="team-caption">
+        A family-owned bakery, proudly serving the Ann Arbor neighborhood with
+        care, consistency, and a smile every day.
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================
+       VISIT US
+       ===================== -->
+  <section id="visit">
+    <div class="container">
+      <h2>Visit Us</h2>
+
+      <div class="visit-grid">
+        <div class="visit-info">
+          <p><strong>Address:</strong> 3031 Packard St, Ann Arbor, MI 48108</p>
+          <p><strong>Hours:</strong> 5:00 AM – 5:00 PM</p>
+          <p>
+            <strong>Facebook:</strong>
+            <a href="https://www.facebook.com/djsbakeryAA/" target="_blank" rel="noopener">
+              facebook.com/djsbakeryAA
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <iframe
+            src="https://www.google.com/maps?q=3031%20Packard%20St%20Ann%20Arbor%20MI%2048108&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       FOOTER
+       ===================== -->
+  <footer>
+    <p>
+      © DJ’s Bakery — Family-owned, locally loved.
+      <br />
+      This site is a mockup for demonstration purposes.
+    </p>
+  </footer>
+
+  <!-- Optional minimal JS placeholder -->
+  <script>
+    // No JavaScript required for this mockup
+  </script>
+
+</body>
+</html>
